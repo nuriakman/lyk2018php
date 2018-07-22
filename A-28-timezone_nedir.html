@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <title>TIME ZONE NEDİR?</title>
+    <link rel="stylesheet" href="bicimler.css">
+  </head>
+<body>
+
+<h1>TIME ZONE NEDİR?</h1>
+<img src="time.png">
+
+<h3>Timezone Nedir?</h3>
+<p>Mysql sunucusu standartda time zone olarak sistem zamanını/saatini kullanır ve kendi içerisinde system_time_zone değişkenini günceller. Herhangi amaç veya yapılandırma için mysql server’in zaman kavramını sunucu sistemine göre değilde farklı bir time zone’a atamak isterseniz tam bu aşamada çözüm sağlayabilirsiniz.
+
+
+  Global time zone dediğimiz olay MySQL sunucusunun default zaman bilgisini konfig ederken, per-connection time zone ise sadece ilgili session için zaman bilgisinin atanmasını sağlar; yani per-connection time zone özelliğini kullanarak aynı MySQL sunucusu üzerinde birden fazla uygulama için farklı zone’lar tanımlanabilir.</p>
+<h3>Timezone Nasıl Ayarlanır?</h3>
+
+<p>Önce mysql console logon oluyoruz. Akabinde aşağıdaki komutu giriyoruz.</p>
+
+<p>SET GLOBAL time_zone = 'Europe/Istanbul';</p>
+
+<a href="index.php" id='btnAnaSayfa'>Geri dön...</a>
+
+</body>
+</html>
