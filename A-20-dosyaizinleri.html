@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <title>Linux Dosya İzinleri</title>
+    <link rel="stylesheet" href="bicimler.css">
+  </head>
+<body>
+
+<h1>LİNUX DOSYA İZİNLERİ</h1>
+
+<h1>chmod Komutu:</h1>
+
+<p><b>Linux Red Hat veya CentOS gibi işletim sistemlerinde dosyaların erişimleri okuma, yazma veya çalıştırma gibi izinlere tabidir.</b></p>
+<ol type="i">
+    <li>Okuma İzni (r, read)</li>
+    <li>Yazma İzni (w, write)</li>
+    <li>Çalıştırma İzni (x, execute)</li>
+</ol>
+    
+
+
+<p>&nbsp;</p>
+<h2><i>“Dosya İzinleri Sembolleri”</i></h2>
+
+<p>Bu izinler dosya sahibinin izinleri, grubun izinleri veya diğer kullanıcıların izinleri şeklinde 3’e ayrılmaktadır.</p>
+
+<ol type="a">
+    <li>Sahibi</li>
+    <li>Grup</li>
+    <li>Diğer</li>
+</ol>
+<img src="linux-dosya-izinleri_1.jpg">
+<p> Dosyaların sahip oldukları izinlere “ls –l” komutuyla görebiliriz. Bunu CentOS DOSYA VE DİZİNLERİN LİSTELENMESİ: ls KOMUTU VE PARAMETRELERİ makalemizde görmüştük.</p>
+
+Aşağıda örnek bir “ls –l” çıktısı verilmiştir. Çıktı “/etc” konumundaki “passwd” dosyasına ait detayları vermektedir.
+linux centos/rhel red hat ls komutu parametreleri örnek
+“ls -l Komut Çıktısı Örneği”
+<p>&nbsp;</p>
+<img src="Linux_izinler_2.jpg">
+<p>&nbsp;</p>
+Çıktıya göre “passwd” dosyasının sahibi “root” kullanıcısının okuma ve yazma yetkisi (rw-) vardır, dosyanın dahil olduğu grup olan “root” grubuna dahil kullanıcıların sadece okuma yetkisi (r–) ve diğer tüm kullanıcıların da sadece okuma yetkisi (r–) vardır.
+centos rhel chmod komutu dosya izinleri değiştirme
+“Dosya İzinleri”
+
+İzinlerin değiştirilmesi için <i>“chmod”</i> komutu kullanılmaktadır. İzinler iki türlü verilebilir.
+
+  <ol type="*"> <li> Sayısal Değerler İle İzinlerin Ayarlanması </li>
+    <li> Harfler İle İzinlerin Ayarlanması </li> </ol>
+
+ Sayısal Değer İle İzinlerin Ayarlanması:
+
+    chmod [sayi] [dosyaadi]
+
+Yetkilerin sayısal karşılıkları; r=4, w=2, x=1
+<p>&nbsp;</p>
+<img src="linux-dosya-izinleri-örnek_3.jpg">
+<p>&nbsp;</p>
+
+
+“ls –al” komutu ile “/Desktop/klasör_N” dizininde bulunan dosyaları listeledik. “YeniDosya” isimli dosyayı gördük.
+ 
+<p>&nbsp;</p>
+
+<img src="linux-dosya-izinleri-örnek-4.jpg">
+<p>&nbsp;</p>
+
+&nbsp;&nbsp;Dosyaya ait izinleri değiştirmek istiyoruz.
+
+  <li>  Dosyanın sahibi hem okusun hem yazsın hem de çalıştırabilsin istiyorsak;</li>
+
+&nbsp;&nbsp;Sahibine (nizam kullanıcısı) verilecek izin; rwx=r+w+x=4+2+1=7
+
+<li>    Dosyanın içerisinde bulunduğu grup üyeleri hem okusun hem yazsın istiyorsak;</li>
+
+&nbsp;&nbsp;Grup (nizam grubu) üyelerine verilecek izin; rw-=r+w+0=4+2+0=6
+
+ <li>   Diğer tüm kullanıcılar sadece okusun istiyor isek;</li>
+
+&nbsp;&nbsp;Diğer kullanıcılar için verilecek izin; r–=r+0+0=4+0+0=4
+
+<li>Sonuç = Kullanılacak izin komut “chmod 764 YeniDosya”</li>
+
+<li> “ls –al” komutu ile “YeniDosya” isimli dosyanın izinlerinin isteğimiz doğrultusunda değiştiğini yani “rw-rw-r-“ olan iznin artık “rwxrw-r–” olarak değiştirildiğini görebiliriz.</li>
+
+<h2> <i>Harfler ile İzinlerin Verilmesi veya Kaldırılması:</i></h2>
+
+<li>u (user) = Dosyanın sahibi</li>
+
+<li>g (group) = Dosyanın Grubu</li>
+
+<li>o (others) = Diğer Kullanıcılar</li>
+
+Dosyaya herhangi bir izni vermek için “+” , izni geri almak için “–“ kullanılmaktadır.
+
+   <li>&nbsp;&nbsp;&nbsp; chmod [harfler] [dosyaadi]</li>
+
+Aşağıda örnek bir işlem yapılmıştır.
+
+<h3><i>“Harfler İle Dosyalara İzin Verilmesi ve İzin Kaldırılması”</i></h3>
+<p>&nbsp;</p>
+
+<img src="linux-dosya-izinleri-örnek-5.jpg">
+
+<p>&nbsp;</p>
+
+
+
+<ol type="*"><li> “ls –al” komutu ile “/Desktop/klasör_N” dizininde bulunan dosyaları listeledik. “YeniDosya” isimli dosyayı ve detaylarını gördük. Dosyaya ait izinler “———“ şeklinde sıfırlanmış durumdadır.</li>
+
+<li> Dosyaya ait izinleri değiştirmek istiyoruz.</li>
+
+    &nbsp;*&nbsp;Dosyanın sahibi hem okusun hem yazsın hem de çalıştırabilsin istiyorsak;
+
+<li>Sahibine (nizam kullanıcısı) verilecek izin; rwx=u+rwx</li>
+
+    &nbsp;*&nbsp;Dosyanın içerisinde bulunduğu grup  üyeleri sadece okusun istiyorsak;
+
+&nbsp;*&nbsp;Grup (nizam grubu) üyelerine verilecek izin; r–= g+r</li>
+
+    &nbsp;*&nbsp;Diğer tüm kullanıcılar hem okusun hem de yazsın istiyorsak;
+
+&nbsp;*&nbsp;Diğer kullanıcılar için verilecek izin; r-x=o+rx
+
+&nbsp;*&nbsp;Sonuç = Kullanılacak izin komut “chmod u+rwx,g+r,o+rx YeniDosya”
+
+<li> “ls –al” komutu ile izinlerin durumunun değiştiğini ve “———“ şeklinden “rwxr—r-x” şekline dönüştüğünü görebiliriz.</li>
+
+<li> Şimdi de bir izini iptal edelim. Dosya sahibinin yazma yetkisini kaldıralım.</li>
+
+&nbsp;*&nbsp;Sonuç = Kullanılacak izin komut “chmod u-w YeniDosya”
+
+<li> “ls –al” komutu ile izinlerin durumunun değiştiğini ve “rwxr—r-x “ şeklinden “r-xr—r-x” şekline dönüştüğünü görebiliriz.</li>
+
+
+<a href="index.php" id='btnAnaSayfa'>Geri dön...</a>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
