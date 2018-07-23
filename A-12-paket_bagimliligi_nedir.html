@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <title>PAKET BAĞIMLILIĞI NEDİR?</title>
+    <link rel="stylesheet" href="bicimler.css">
+  </head>
+<body>
+
+
+<h1>Paket Bağımlılığı Nedir? </h1>
+<img src="apt.png" align="left" height="350">
+<p> Programlar, çalışabilmek için kütüphane dosyalarına ihtiyaç duyarlar. Kütüphane dosyaları, başka programlara servis sunan, altprogramları içeren yapılardır.
+  Örneğin, DivX filmleri izleyeceğiniz bir proje hazırlıyorsanız, oturup DivX kodunu çözmek için uğraşmanız gerekmez.
+  Daha önceden DivX kodunu çözmek için üretilmiş bir kütüphane kullanırsınız ve projeniz hızlıca tamamlanır.
+   Ancak kütüphane dosyalarıyla projelerin geliştirilmesi, bazı sorunları da beraberinde getiriyor.
+
+İngilizce'de "Dependency Hell" diye bir tanım var. Türkçe'ye çevirisini, "Bağımlılık Cehennemi" olarak yapabiliriz.
+ Bağımlılık Cehennemi, Windows'ta pek göreceğiniz bir durum olmamakla birlikte, Linux'ta sürekli boğuştuğumuz bir konu.
+ Linux'ta herhangi bir projenin kaynak dosyalarını alıp, derlemek veya önceden derlenmiş bir paketi kurmak isterseniz,
+ kurulum için gerekli bazı dosyaların eksik olduğu gerekçesiyle, kurulum iptal edilebilir. Eksik dosyalar veya programlar tamamlandıktan sonra,
+ kurulum işlemini gerçekleştirebilirsiniz. Linux ile Windows arasında en büyük fark buradadır.
+
+Dikkat etmişsinizidir, Linux'ta program boyutları oldukça mütevazı oluyor. 3 MB'a render programları, 2 MB'a video işleme araçları, hatta 60 KB'a editörler bulabiliyorsunuz.
+ Windows programlarına ait kurulum dosyalarıysa, bu verdiğimiz rakamların oldukça üstünde yer kaplıyor.
+ Bu farklı durumun, Windows'un veya Linux'un birbirinden iyi ya da kötü olmasıyla bir alakası yok. Nedeni aslında çok basit; konuya yaklaşım farkı...
+
+Linux geliştiricilerinin genel felsefesi, herkesi düşünerek program yazmalarıdır. Sizin emrinize tahsis edilmiş, 1 Mbit'lik Internet bağlantınız olabilir.
+Ancak sizin imkanlarınıza sahip olmayan dünyanın büyük çoğunluğu, hâlâ telefonla bağlantı kullanıyor. 56 Kbps bağlantı ile Internet'e bağlanan birisi için, 4 MB ile 12 MB arasında ciddi bir fark var. Linux'ta program geliştirenler de bu durumu hesaba katıyorlar.
+
+Çoğu Linux programının, ufak boyutta gelmesinin en büyük nedeni, programın kullandığı kütüphane dosyalarının veya bazı araçların kurulum dosyasının dışına çıkartılmasıdır.
+Böylece yazılım, gayet ufak boyuta inebilir. Windows programlarıysa, kurulum dosyaları içinde gereken her türlü aracı ve kullanılacak bütün kütüphane dosyalarını içerir.
+ Bu da bu programların boyutunu doğal olarak yükseltir. Her iki yöntemin avantajları ve dezavantajları bulunuyor.
+
+Windows programları, çok yer kaplar. Ama kurulumu çok basittir. Programın çalışması için eksik bir dosya varsa, eksik dosyaların kurulumu gerçekleştirilir.
+ Önemli olan basit kurulumdur. Linux'taysa öncelik ufak boyuta verilmiştir. Linux programlarına ait kurulum paketleri bu nedenle az yer kaplar.
+ Fakat gereken bir dosya bulunmuyorsa, o zaman paket bir şey yapamaz ve program kurulumu iptal edilir.
+ İlgili kütüphane dosyalarını indirip, yüklemek kullanıcının sorumluluğundadır.
+  Bu sorumluluğu yerine getirmenin, zaman zaman deveye hendek atlamaktan zor olduğunu hatırlatalım. </p>
+
+
+<a href="index.html" id='btnAnaSayfa'>Geri dön...</a>
+
+</body>
+</html>
