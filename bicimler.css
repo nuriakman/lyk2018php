@@ -1,0 +1,25 @@
+
+body {
+  font-size: 16px;
+  background-color: white;
+  width: 70%;
+  margin: auto auto;
+}
+
+h1 {
+  font-size: 30px;
+  color: darkred;
+  font-family: Verdana, Tahoma;
+  border-bottom: 1px solid grey;
+  background-color: lightgray;
+  padding: 10px;
+}
+
+p {
+  text-align: justify;
+}
+
+img {
+  margin: 5px;
+  padding: 5px;
+}
